@@ -1,5 +1,5 @@
 import { Box, List, ListItem, ListItemIcon, ListItemText, Typography, Divider } from '@mui/material';
-import { Home, Search, Favorite, Language, Tag } from '@mui/icons-material';
+import { Home, Search, Favorite, Language, Tag, Radio } from '@mui/icons-material';
 import { useNavigate } from 'react-router-dom';
 import { useState, useEffect } from 'react';
 import { radioService } from '../services/radioService';
@@ -46,10 +46,74 @@ const Sidebar = () => {
         scrollbarWidth: 'none',  /* Firefox */
       }}
     >
-      <Box sx={{ p: 2 }}>
-        <Typography variant="h6" sx={{ color: 'primary.main', fontWeight: 'bold' }}>
-          Radio App
-        </Typography>
+      <Box 
+        sx={{ 
+          p: 2,
+          display: 'flex',
+          alignItems: 'center',
+          gap: 1,
+          borderBottom: 1,
+          borderColor: 'divider',
+          pb: 2,
+          background: 'linear-gradient(45deg, rgba(76, 175, 80, 0.05) 0%, rgba(76, 175, 80, 0.1) 100%)',
+          '&:hover': {
+            background: 'linear-gradient(45deg, rgba(76, 175, 80, 0.1) 0%, rgba(76, 175, 80, 0.15) 100%)',
+          }
+        }}
+      >
+        <Radio 
+          sx={{ 
+            color: '#4CAF50', 
+            fontSize: 32,
+            filter: 'drop-shadow(0px 2px 4px rgba(76, 175, 80, 0.2))',
+            transition: 'transform 0.2s ease-in-out',
+            '&:hover': {
+              transform: 'scale(1.1)',
+            }
+          }} 
+        />
+        <Box sx={{ display: 'flex', flexDirection: 'column' }}>
+          <Typography 
+            variant="h6" 
+            component="div" 
+            sx={{ 
+              color: '#4CAF50',
+              fontWeight: 800,
+              letterSpacing: '0.5px',
+              fontSize: '1.4rem',
+              textTransform: 'uppercase',
+              lineHeight: 1.2,
+              textShadow: '0px 2px 4px rgba(76, 175, 80, 0.2)',
+              fontFamily: '"Roboto", "Helvetica", "Arial", sans-serif',
+              background: 'linear-gradient(45deg, #4CAF50 30%, #81C784 90%)',
+              WebkitBackgroundClip: 'text',
+              WebkitTextFillColor: 'transparent',
+              transition: 'all 0.2s ease-in-out',
+              '&:hover': {
+                transform: 'scale(1.02)',
+                textShadow: '0px 4px 8px rgba(76, 175, 80, 0.3)',
+              }
+            }}
+          >
+            Global
+          </Typography>
+          <Typography 
+            variant="subtitle1" 
+            component="div" 
+            sx={{ 
+              color: '#4CAF50',
+              fontWeight: 500,
+              letterSpacing: '1px',
+              fontSize: '0.9rem',
+              opacity: 0.9,
+              textTransform: 'uppercase',
+              lineHeight: 1.2,
+              fontFamily: '"Roboto", "Helvetica", "Arial", sans-serif',
+            }}
+          >
+            Radio
+          </Typography>
+        </Box>
       </Box>
 
       <List>

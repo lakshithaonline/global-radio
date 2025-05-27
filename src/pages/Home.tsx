@@ -27,9 +27,7 @@ const Home = () => {
 
   return (
     <Box>
-      <Typography variant="h4" sx={{ mb: 4 }}>
-        Welcome to Radio App
-      </Typography>
+     
 
       {/* Recently Played section */}
       {recentStations.length > 0 && (

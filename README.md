@@ -1,4 +1,4 @@
-# Radio App
+# Global Radio
 
 A modern web application for streaming radio stations built with React, TypeScript, and Vite.
 
